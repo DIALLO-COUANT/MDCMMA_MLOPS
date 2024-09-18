@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Default Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px; /* Espace entre le formulaire et la prédiction */
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .prediction-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prediction-container p {
+      color: #333;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Formulaire de prédiction -->
+    <form method="POST" action="/predict">
+      <h1>Loan Default Prediction</h1>
+
+      <label for="customer_id">Customer ID:</label>
+      <input type="number" id="customer_id" name="customer_id" required>
+
+      <label for="credit_lines_outstanding">Credit Lines Outstanding:</label>
+      <input type="number" id="credit_lines_outstanding" name="credit_lines_outstanding" required>
+
+      <label for="loan_amt_outstanding">Loan Amount Outstanding:</label>
+      <input type="number" id="loan_amt_outstanding" name="loan_amt_outstanding" step="0.01" required>
+
+      <label for="total_debt_outstanding">Total Debt Outstanding:</label>
+      <input type="number" id="total_debt_outstanding" name="total_debt_outstanding" step="0.01" required>
+
+      <label for="income">Income:</label>
+      <input type="number" id="income" name="income" step="0.01" required>
+
+      <label for="years_employed">Years Employed:</label>
+      <input type="number" id="years_employed" name="years_employed" required>
+
+      <label for="fico_score">FICO Score:</label>
+      <input type="number" id="fico_score" name="fico_score" required>
+
+      <button type="submit">Predict Risk</button>
+
+      <p id="redirect_message"></p>
+    </form>
+
+    <!-- Texte de prédiction à droite -->
+    <div class="prediction-container">
+      <p>{{ prediction_text }}</p>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
