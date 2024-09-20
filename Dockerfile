@@ -1,16 +1,22 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
-# Working Directory
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy source code to working directory
-COPY . app.py /app/
+# Copier le fichier requirements.txt
+COPY requirements.txt .
 
-# Install packages from requirements.txt
-
-RUN pip install --no-cache-dir --upgrade pip &&\
+# Installer les dépendances
+RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
-CMD python app.py
+# Copier le reste des fichiers dans le conteneur
+COPY . /app
 
+# Exposer le port 8000
 EXPOSE 8000
+
+# Démarrer l'application Flask
+CMD ["python", "app.py"]
+
+

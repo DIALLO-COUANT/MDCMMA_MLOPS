@@ -3,6 +3,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import GradientBoostingClassifier
 import pickle
+import numpy as np
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 
 # Charger les données (remplacez par votre propre fichier CSV)
 df = pd.read_csv('data/Loan_Data.csv')
