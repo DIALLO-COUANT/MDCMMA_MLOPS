@@ -55,13 +55,13 @@ jobs:
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
 
-      - name: Get current date
+      - name: Set Date Output
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')" 
+        run: echo "DATE=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
 
-      - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ env.DATE }}
 
       - name: Docker Push
-        run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+        run: docker push $DOCKER_USER/$REPO_NAME:${{ env.DATE }}
 
