@@ -57,7 +57,7 @@ jobs:
 
       - name: Set Date Output
         id: date
-        run: echo "DATE=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
+        run: echo "DATE=$(date +'%Y-%m-%d--%M-%S')" >> $GITHUB_ENV
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag $DOCKER_USER/$DOCKER_REPO_NAME:${{ env.DATE }}
