@@ -3,7 +3,7 @@ name: Github-Docker Hub MLOps App Flask Risque Défaut de Paiement
 env:
   DOCKER_USER: ${{ secrets.DOCKER_USER }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  REPO_NAME: ${{ secrets.REPO_NAME }}
+  REPO_NAME: ${{ secrets.DOCKER_REPO_NAME }}
 
 on:
   push:
@@ -60,8 +60,8 @@ jobs:
         run: echo "DATE=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ env.DATE }}
+        run: docker build . --file Dockerfile --tag $DOCKER_USER/$DOCKER_REPO_NAME:${{ env.DATE }}
 
       - name: Docker Push
-        run: docker push $DOCKER_USER/$REPO_NAME:${{ env.DATE }}
+        run: docker push $DOCKER_USER/$DOCKER_REPO_NAME:${{ env.DATE }}
 
