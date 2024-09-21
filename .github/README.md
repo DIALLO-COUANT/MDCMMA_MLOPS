@@ -2,9 +2,9 @@
 
 ![banner](hand-3044387_1280.jpg)
 
-## Table of Contents
+## Sommaire
 
--   [Technologies Utiliées](#technologies-used)
+-   [Technologies Utilisées](#technologies-used)
 -   [Description](#description)
 -   [Objectifs](#objectives)
 
@@ -20,19 +20,19 @@
 ## Description
 Déployer un service d'une application Flask pour prédire le reisque de défaut de paiement d'un client
 
-### Objectives
-The main objective of this project is build an image and a pipeline with all the necessary tools to achieve the deployment of a predictive app. The specific steps include:
+### Objectifs
+A partir d'un dataset construire une application et réaliser une image Docker et déployer cette application hébergée sur AWS :
 
-1. **Data Preprocessing**: Préparation et anlyse 
-2. **Model Engineering**: Test de 3 algorythme
+1. **Exploration des données**: Préparation et anlyse 
+2. **Choix du modèle de ML**:  Gradient Boosting Classifer
 3. **Model Tracking**: Utilisation de Mlflow
 4. **App Deployment**: Créer un CI/CD pipeline.
 ---
-## Collaborators
+## Collaborateurs
 
-This project was developed by a collaborative team. Each member played a crucial role in the research, development, and analysis:
+Ce projet a été réalisé par :
 
-- **Mariam Diall-Couant**
+- **Mariam Diallo-Couant**
 - **Maud Mayousse-Aumiphin**
 ---
 
