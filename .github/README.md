@@ -26,9 +26,9 @@ A partir d'un dataset construire une application et réaliser une image Docker e
 1. **Exploration des données**: Préparation et anlyse 
 2. **Choix du modèle de ML**:  Gradient Boosting Classifer
 3. **Model Tracking**: Utilisation de Mlflow
-4. **App Deployment**: Créer un CI/CD pipeline.
+4. **Déploiement d'une application**: Créer un CI/CD pipeline Docker et AWS.
 ---
-## Collaborateurs
+## Collaboratrices
 
 Ce projet a été réalisé par :
 
