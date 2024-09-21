@@ -4,17 +4,10 @@
 
 ## Table of Contents
 
--   [Technologies Used](#technologies-used)
+-   [Technologies Utiliées](#technologies-used)
 -   [Description](#description)
--   [Objectives](#objectives)
--   [Presentation](#presentation)
--   [Notebooks Overview](#notebooks-overview)
--   [Using Docker](#using-docker)
--   [Installation](#installation)
--   [Usage](#usage)
--   [Project Structure](#project-structure)
--   [Collaborators](#collaborators)
--   [License](#license)
+-   [Objectifs](#objectives)
+
 
 ---
 
@@ -25,113 +18,16 @@
 ---
 
 ## Description
-This project is focused on building an app that estimates the probability of default for each client based on their characteristics. Then create a CI/CD pipeline to deploy it with AWS Elastic Container Service
+Déployer un service d'une application Flask pour prédire le reisque de défaut de paiement d'un client
 
 ### Objectives
 The main objective of this project is build an image and a pipeline with all the necessary tools to achieve the deployment of a predictive app. The specific steps include:
 
-1. **Data Preprocessing**: Filtering and preparing the dataset for analysis.
-2. **Model Engineering**: Test at least two classification algorithms.
-3. **Model Tracking**: Tracking the metrics and artifacts of the model with MLflow.
-4. **App Deployment**: Create a CI/CD pipeline.
+1. **Data Preprocessing**: Préparation et anlyse 
+2. **Model Engineering**: Test de 3 algorythme
+3. **Model Tracking**: Utilisation de Mlflow
+4. **App Deployment**: Créer un CI/CD pipeline.
 ---
-
-## Presentation
-
-A **presentation** is available as a **PDF** file in the repo ```Loan_Default_Prediction_MLOPS_Presentation.pdf``` & also as a **Canva/Powerpoint** presentation through the following link: [Presentation Link](https://www.canva.com/design/DAGQGXGl6cY/MxnDDFWOFYTaYfHhl0eRFg/view?utm_content=DAGQGXGl6cY&utm_campaign=designshare&utm_medium=link&utm_source=editor).
-
----
-## Notebooks Overview
-
-1. **¨Exploratory_Data_Analysis.ipynb**:
-   - This notebook contains the data exploration, analysis & preprocessing.
-2. **¨Loan_Default_Prediciont_Models.ipynb**:
-   - This notebook contains the models fitting, evaluation and mlflow setup.
----
-## Using Docker
-#### 1. Pulling the Docker Image
-To pull the Docker image from Docker Hub, run the following command:
-```sh
-# Pull the docker image
-$ docker pull medkallel/loan-default-prediction:latest
-```
-#### 2. Building the Docker Image
-If you prefer to build the Docker image locally, navigate to the project directory and run:
-
-```sh
-# Build the docker image
-$ docker build -t loan-default-prediction .
-```
-#### 3. Running the Docker Container
-To run the Docker container, use the following command:
-```sh
-# Run the docker container
-$ docker run -p 5000:5000 loan-default-prediction
-```
-> [!TIP] 
-> You can access the app on another device by following the link: ```http://<server-ip>:8501```
----
-## Installation
-
-> [!IMPORTANT]
-> The project was done on Python 3.12.5
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-```sh
-# Clone the repository
-$ git clone 
-# Navigate into the directory
-$ cd Loan-Default-Prediction
-```
-2. Install the required dependencies:
-```sh
-# Install the requirements
-$ pip install -r requirements.txt
-```
----
-## Usage 
-
-1. To use the App, Just run the app.py
-```sh
-$ python app.py
-```
----
-## Project structure
-```sh
-📦 mlops-project/
-├── 📁.github/
-│   └── 📁workflows/
-│       └── aws.yaml
-├── 📁Data/
-│   ├── 🗃️Loan_Data_Describe.csv # Describe data used to denormalize
-│   ├── 🗃️Loan_Data.csv # Initial Dataset
-│   └── 🗃️Processed_Loan_Data.csv 
-│ 
-├── 📁Models/
-│   └── 🤖model.pkl
-│
-├── 📁mlartifacts/ # Contains mlflow artifacts for runs
-├── 📁mlruns/ # Contains mlflow runs logs
-│ 
-├── 📁templates/
-│   └── index.html
-├── 🐍app.py
-├── 📓Exploratory_Data_Analysis.ipynb
-├── 📓Loan_Default_Prediction_Models.ipynb
-├── 📄requirements.txt
-├── 📄.dockerignore
-├── 📄.gitignore
-├── 📄Dockerfile
-├── 📄LICENCE.md
-├── 📄README.md
-└── 📄Loan_Default_Prediction_MLOPS_Presentation.pdf
-```
-
----
-
-
 ## Collaborators
 
 This project was developed by a collaborative team. Each member played a crucial role in the research, development, and analysis:
@@ -139,8 +35,4 @@ This project was developed by a collaborative team. Each member played a crucial
 - **Mariam Diall-Couant**
 - **Maud Mayousse-Aumiphin**
 ---
-
-
-
-## License
 
